@@ -1,0 +1,433 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukumar Salunke | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111a30;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #43d9d0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #43d9d0;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #43d9d0;
+        }
+
+        .hero p {
+            color: #b7c0d5;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .profile {
+            min-width: 220px;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 5px solid #43d9d0;
+            background: linear-gradient(135deg, #7c5cff, #43d9d0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
+            font-weight: bold;
+            color: #0b1020;
+            box-shadow: 0 0 35px #43d9d044;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #43d9d0;
+            color: #0b1020;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #7c5cff;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #43d9d0;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            color: #b7c0d5;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: #111a30;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #26324b;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #43d9d0;
+        }
+
+        .card h3 {
+            color: #43d9d0;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #b7c0d5;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #17223c;
+            border: 1px solid #33415f;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #43d9d0;
+            color: #0b1020;
+        }
+
+        .education {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .education .card {
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #b7c0d5;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #111a30;
+            color: #b7c0d5;
+        }
+
+        @media (max-width: 850px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .profile {
+                width: 200px;
+                height: 200px;
+                min-width: 200px;
+                font-size: 50px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">Sukumar.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <div>
+            <p style="color: #43d9d0;">HELLO, WELCOME TO MY PORTFOLIO</p>
+
+            <h1>
+                Hi, I'm Sukumar<br>
+                <span>IT Engineer</span>
+            </h1>
+
+            <p>
+                I am an Information Technology graduate currently pursuing
+                CDAC PGCP-ITISS at IACSD, Pune. I am passionate about
+                technology, software development, computer networking,
+                Linux and solving technical problems.
+            </p>
+
+            <a href="#projects" class="btn">View My Projects</a>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+
+        <div class="profile">SS</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <p class="about-text">
+            I completed my Bachelor of Engineering in Information Technology
+            with a CGPA of 8.22. I am continuing to develop my technical skills
+            through CDAC PGCP-ITISS. I enjoy learning new technologies,
+            practising networking and Linux commands, and building practical
+            projects. My goal is to grow as a skilled IT professional.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">C++</div>
+            <div class="skill">Linux / Debian</div>
+            <div class="skill">Computer Networking</div>
+            <div class="skill">IP Addressing</div>
+            <div class="skill">Subnetting</div>
+            <div class="skill">Routing</div>
+            <div class="skill">VLAN</div>
+            <div class="skill">DNS</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">Cisco Packet Tracer</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Adaptive Signalized Intersection Control</h3>
+                <p>
+                    An academic project based on Digital Twins for adaptive
+                    traffic-signal control. It includes Java web modules and
+                    comparison of DT-1, DT-2 and baseline algorithms.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Linux & Networking Lab</h3>
+                <p>
+                    Practical exercises involving Linux administration,
+                    DNS configuration, SSH, SFTP, file sharing, IP addressing,
+                    routing and network troubleshooting.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Personal Portfolio Website</h3>
+                <p>
+                    A responsive personal website developed using HTML and CSS
+                    to present my education, technical skills, projects
+                    and professional contact information.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">My <span>Education</span></h2>
+
+        <div class="education">
+
+            <div class="card">
+                <h3>CDAC PGCP-ITISS</h3>
+                <p>IACSD, Pune</p>
+                <p>Currently pursuing</p>
+            </div>
+
+            <div class="card">
+                <h3>Bachelor of Engineering</h3>
+                <p>Information Technology</p>
+                <p>Dr. Vithalrao Vikhe Patil College of Engineering</p>
+                <p>Graduated in 2026 | CGPA: 8.22</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <div class="contact">
+            <p>Interested in connecting or discussing an opportunity?</p>
+
+            <!-- Replace these links with your actual profile details -->
+            <a href="mailto:your.email@example.com" class="btn">
+                Email Me
+            </a>
+
+            <a href="https://github.com/" target="_blank"
+               rel="noopener noreferrer" class="btn">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank"
+               rel="noopener noreferrer" class="btn">
+                LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Sukumar Salunke. All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
+```
